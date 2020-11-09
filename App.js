@@ -1,6 +1,6 @@
 import React from 'react'
 import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, Text } from 'react-native'
 import ContactsList from './src/components/ContactsList'
 import ContactDetail from './src/components/ContactDetail'
 

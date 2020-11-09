@@ -3,7 +3,6 @@ import { View, Text, StyleSheet, Dimensions, StatusBar } from 'react-native'
 import { Image } from 'react-native-elements'
 
 const win = Dimensions.get('window')
-const ratio = win.width / 128
 
 const styles = StyleSheet.create({
 	container: {

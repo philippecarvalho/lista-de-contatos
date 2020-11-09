@@ -1,5 +1,5 @@
 import React from 'react'
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, Content } from 'react-native'
+import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar } from 'react-native'
 import { ListItem, Avatar } from 'react-native-elements'
 import axios from 'axios'
 
