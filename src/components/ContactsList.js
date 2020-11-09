@@ -1,5 +1,5 @@
 import React from 'react'
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar } from 'react-native'
+import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, Content } from 'react-native'
 import { ListItem, Avatar } from 'react-native-elements'
 import axios from 'axios'
 
@@ -11,10 +11,11 @@ const Item = ({ title }) => (
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1
+		flex: 1,
+		backgroundColor: '#f3f3fc'
 	},
 	item: {
-		marginVertical: 1
+		marginVertical: 3
 	},
 	title: {
 		fontSize: 20
@@ -51,20 +52,23 @@ export default class ContactsList extends React.Component {
 	keyExtractor = (item, index) => index.toString()
 
 	renderItem = ({ item }) => (
-		<ListItem
-			bottomDivider
-			style={styles.item}
-			onPress={() => {
-				this.props.navigation.navigate('Detalhes', { item })
-			}}
-		>
-			<Avatar rounded style={styles.avatar} source={{ uri: item.picture.thumbnail }} />
-			<ListItem.Content>
-				<ListItem.Title style={styles.title}>{item.name.first}</ListItem.Title>
-				<ListItem.Subtitle style={styles.subtitle}>{item.phone}</ListItem.Subtitle>
-			</ListItem.Content>
-			<ListItem.Chevron color="black" />
-		</ListItem>
+		<SafeAreaView>
+			<StatusBar barStyle="light-content" backgroundColor="#4d5ce7" />
+			<ListItem
+				bottomDivider
+				style={styles.item}
+				onPress={() => {
+					this.props.navigation.navigate('Detalhes', { item })
+				}}
+			>
+				<Avatar rounded style={styles.avatar} source={{ uri: item.picture.thumbnail }} />
+				<ListItem.Content>
+					<ListItem.Title style={styles.title}>{item.name.first}</ListItem.Title>
+					<ListItem.Subtitle style={styles.subtitle}>{item.phone}</ListItem.Subtitle>
+				</ListItem.Content>
+				<ListItem.Chevron color="black" />
+			</ListItem>
+		</SafeAreaView>
 	)
 
 	render() {
